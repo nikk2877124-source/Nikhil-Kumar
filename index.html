@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nikhil Kumar — Data Scientist & ML Engineer specializing in data analysis, machine learning, business intelligence, and predictive analytics. B.Tech CS 2026.">
+  <meta name="keywords" content="data scientist, machine learning, data analyst, Python, Power BI, portfolio, Nikhil Kumar">
+  <meta name="author" content="Nikhil Kumar">
+  <title>Portfolio | Nikhil Kumar — Data Scientist</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <span>Welcome to my portfolio</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">AI-Powered Data Analyst | Business Intelligence & Machine Learning</div>
+        <h1 class="hero-title">
+          <span class="greeting">Hi, I'm</span>
+          <span class="name">Nikhil Kumar</span>
+        </h1>
+        <p class="hero-subtitle">I turn data into decisions.</p>
+        <p class="hero-description">
+          Results-driven Computer Science graduate with 6+ months of Data Science internship experience. I build end-to-end analytics pipelines, ML models, and interactive dashboards that drive business impact.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">
+            View My Work <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+          </a>
+          <a href="assets/Nikhil_Kumar_CV.pdf" download="Nikhil_Kumar_CV.pdf" class="btn-secondary">
+            Download CV <i class="fa-solid fa-download" style="font-size: 0.8rem;"></i>
+          </a>
+        </div>
+        <div class="hero-tech">
+          <span class="hero-tech-label">Technologies I Work With</span>
+          <div class="hero-tech-icons">
+            <div class="tech-icon" title="Python">
+              <i class="fa-brands fa-python" style="color: #3776ab;"></i>
+            </div>
+            <div class="tech-icon" title="SQL / MySQL">
+              <i class="fa-solid fa-database" style="color: #00758f;"></i>
+            </div>
+            <div class="tech-icon" title="Power BI">
+              <i class="fa-solid fa-chart-column" style="color: #f2c811;"></i>
+            </div>
+            <div class="tech-icon" title="Pandas / NumPy">
+              <i class="fa-solid fa-table" style="color: #150458;"></i>
+            </div>
+            <div class="tech-icon" title="Scikit-learn">
+              <i class="fa-solid fa-brain" style="color: #f89939;"></i>
+            </div>
+            <div class="tech-icon" title="Streamlit">
+              <span style="color: #ff4b4b; font-weight: 700; font-size: 0.85rem;">St</span>
+            </div>
+            <div class="tech-icon" title="FastAPI">
+              <i class="fa-solid fa-bolt" style="color: #009688;"></i>
+            </div>
+            <div class="tech-icon" title="Git">
+              <i class="fa-brands fa-git-alt" style="color: #f05033;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <div class="hero-image-glow"></div>
+          <img src="assets/images/profile.jpg" alt="Nikhil Kumar - Data Scientist" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content reveal">
+        <span class="section-label">About Me</span>
+        <h2 class="about-title">
+          I'm passionate about<br>turning data into <span>actionable insights</span>
+        </h2>
+        <p class="about-text">
+          With 6+ months of intensive Data Science internship experience, I specialize in data analysis, machine learning, business intelligence, and predictive analytics. I'm proficient in Python, SQL, Pandas, Power BI, and Scikit-learn — building end-to-end analytics pipelines, interactive dashboards, and ML models that translate complex datasets into data-driven decisions.
+        </p>
+        <a href="#experience" class="btn-outline">
+          View My Experience <i class="fa-solid fa-briefcase" style="font-size: 0.8rem;"></i>
+        </a>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-icon stat-icon--purple">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div>
+            <div class="stat-number" data-count="4">0</div>
+            <div class="stat-label">Internships Completed</div>
+          </div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-icon stat-icon--cyan">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <div>
+            <div class="stat-number" data-count="5" data-suffix="+">0</div>
+            <div class="stat-label">Projects Deployed</div>
+          </div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-icon stat-icon--green">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <div>
+            <div class="stat-number" data-count="88" data-suffix="%">0</div>
+            <div class="stat-label">ML Model Accuracy</div>
+          </div>
+        </div>
+        <div class="stat-card reveal reveal-delay-4">
+          <div class="stat-icon stat-icon--pink">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div>
+            <div class="stat-number" data-count="6" data-suffix="+">0</div>
+            <div class="stat-label">Certifications Earned</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE SECTION ==================== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <span class="section-label">My Experience</span>
+      <h2 class="section-title">Professional Journey</h2>
+
+      <div class="experience-timeline">
+        <!-- Experience 1 -->
+        <div class="experience-item reveal">
+          <div class="experience-dot"></div>
+          <div class="experience-card">
+            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Jan 2026 – Jun 2026</span>
+            <h3 class="experience-role">Data Science Project Intern</h3>
+            <p class="experience-company">Solitaire Infosys</p>
+            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Sahibzada Ajit Singh Nagar, Punjab</p>
+            <ul class="experience-points">
+              <li>Designed Influence Guard AI — an end-to-end ML solution processing 50,000+ rows of social media data to detect fraudulent influencer activity.</li>
+              <li>Executed data preprocessing, cleaning, and feature engineering using Python, Pandas & NumPy, improving dataset quality by 35%.</li>
+              <li>Implemented Isolation Forest anomaly detection achieving 88% accuracy and 85% precision in fraud detection.</li>
+              <li>Built 3 interactive Power BI dashboards, reducing manual reporting time by 40%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="experience-item reveal reveal-delay-1">
+          <div class="experience-dot"></div>
+          <div class="experience-card">
+            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Jun 2025 – Aug 2025</span>
+            <h3 class="experience-role">Python Data Science Intern</h3>
+            <p class="experience-company">Croma Campus</p>
+            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Noida, Uttar Pradesh</p>
+            <ul class="experience-points">
+              <li>Performed data cleaning, analysis, and visualization on 10+ real-world datasets using Python, Pandas, Matplotlib & Seaborn.</li>
+              <li>Conducted exploratory data analysis and statistical hypothesis testing to uncover hidden patterns.</li>
+              <li>Developed skills in analytical storytelling and translating raw data into compelling visual narratives.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="experience-item reveal reveal-delay-2">
+          <div class="experience-dot"></div>
+          <div class="experience-card">
+            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Apr 2025 – May 2025</span>
+            <h3 class="experience-role">Data Analytics Virtual Intern</h3>
+            <p class="experience-company">Deloitte Australia (via Forage)</p>
+            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Virtual Program</p>
+            <ul class="experience-points">
+              <li>Completed Deloitte's Data Analytics Job Simulation with consulting-style analytics case studies.</li>
+              <li>Performed data cleaning, transformation, and statistical analysis on complex business datasets.</li>
+              <li>Created executive-level data visualizations and interactive dashboards for stakeholder audiences.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 4 -->
+        <div class="experience-item reveal reveal-delay-3">
+          <div class="experience-dot"></div>
+          <div class="experience-card">
+            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Jun 2023 – Jul 2023</span>
+            <h3 class="experience-role">Python Intern</h3>
+            <p class="experience-company">HopingMinds</p>
+            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Sahibzada Ajit Singh Nagar, Punjab</p>
+            <ul class="experience-points">
+              <li>Developed an AI-powered conversational chatbot using LLM API and Python, handling 500+ simulated user interactions.</li>
+              <li>Gained hands-on exposure to Generative AI, API integration, and conversational AI development.</li>
+              <li>Collaborated on designing prompt engineering strategies to optimize response accuracy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <span class="section-label">My Skills</span>
+      <h2 class="section-title">Technologies I Master</h2>
+
+      <div class="skills-grid">
+        <div class="skill-item reveal">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--html">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <span class="skill-name">Python</span>
+            </div>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="95"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--react">
+                <i class="fa-solid fa-table"></i>
+              </div>
+              <span class="skill-name">Pandas / NumPy</span>
+            </div>
+            <span class="skill-percent">92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="92"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-2">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--node">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <span class="skill-name">Scikit-learn / ML</span>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="85"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--css">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <span class="skill-name">SQL / MySQL</span>
+            </div>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="90"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--tailwind">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+              <span class="skill-name">Power BI / DAX</span>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="88"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-2">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--js">
+                <i class="fa-solid fa-chart-area"></i>
+              </div>
+              <span class="skill-name">Matplotlib / Seaborn</span>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="88"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--ts">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <span class="skill-name">FastAPI</span>
+            </div>
+            <span class="skill-percent">82%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="82"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--next">
+                <span style="font-size: 0.75rem;">St</span>
+              </div>
+              <span class="skill-name">Streamlit</span>
+            </div>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="80"></div>
+          </div>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-2">
+          <div class="skill-header">
+            <div class="skill-info">
+              <div class="skill-logo skill-logo--git">
+                <i class="fa-brands fa-git-alt"></i>
+              </div>
+              <span class="skill-name">Git / GitHub</span>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-width="85"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS SECTION ==================== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <span class="section-label">Featured Projects</span>
+      <h2 class="section-title">Some of My Recent Work</h2>
+
+      <div class="projects-grid-5">
+        <!-- Project 1 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/images/projects/influenceguard.png" alt="Influence Guard AI" loading="lazy">
+            <span class="project-number">01</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Scikit-learn</span>
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">ML</span>
+            </div>
+            <h3 class="project-title">Influence Guard AI</h3>
+            <p class="project-desc">ML-powered fraud detection for influencer accounts — 88% accuracy, 85% precision using Isolation Forest on 5,000+ profiles.</p>
+            <a href="https://github.com/nikk2877124-source" target="_blank" class="project-link">
+              View Project <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <img src="assets/images/projects/blinkit.png" alt="Blinkit Grocery Data Analysis" loading="lazy">
+            <span class="project-number">02</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">Power BI</span>
+            </div>
+            <h3 class="project-title">Blinkit Grocery Analysis</h3>
+            <p class="project-desc">End-to-end grocery sales pipeline with 15+ KPIs, drill-down Power BI dashboard on 20,000+ transaction records.</p>
+            <a href="https://github.com/nikk2877124-source" target="_blank" class="project-link">
+              View Project <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-image">
+            <img src="assets/images/projects/ecommerce-analysis.png" alt="E-commerce Sales Analysis" loading="lazy">
+            <span class="project-number">03</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">SQL</span>
+              <span class="project-tag">Power BI</span>
+            </div>
+            <h3 class="project-title">E-Commerce Sales Analysis</h3>
+            <p class="project-desc">Analyzed 30,000+ orders with RFM segmentation, cohort analysis, and revenue forecasting dashboards.</p>
+            <a href="https://github.com/nikk2877124-source" target="_blank" class="project-link">
+              View Project <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/images/projects/fitgenie.png" alt="Fit Genie" loading="lazy">
+            <span class="project-number">04</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Gemini API</span>
+              <span class="project-tag">Gen AI</span>
+            </div>
+            <h3 class="project-title">Fit Genie</h3>
+            <p class="project-desc">AI-powered fitness coach using FastAPI & Gemini API — personalized workout plans, nutrition guidance, and AI chat.</p>
+            <a href="https://github.com/nikk2877124-source" target="_blank" class="project-link">
+              View Project <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <img src="assets/images/projects/insightai.png" alt="Insight AI" loading="lazy">
+            <span class="project-number">05</span>
+            <span class="project-badge-wip">🚧 In Progress</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Ollama</span>
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">MySQL</span>
+            </div>
+            <h3 class="project-title">Insight AI</h3>
+            <p class="project-desc">AI-powered BI assistant — natural language queries, automated SQL generation, dynamic visualizations & report generation.</p>
+            <a href="https://github.com/nikk2877124-source" target="_blank" class="project-link">
+              View Project <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION SECTION ==================== -->
+  <section class="education" id="education">
+    <div class="container">
+      <span class="section-label">Education</span>
+      <h2 class="section-title">Academic Background</h2>
+
+      <div class="education-grid">
+        <div class="education-card reveal">
+          <div class="education-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="education-degree">B.Tech — Computer Science</h3>
+          <p class="education-school">Sardar Beant Singh State University (SBSSU)</p>
+          <p class="education-year"><i class="fa-regular fa-calendar"></i> 2022 – 2026 · Gurdaspur, Punjab</p>
+          <p class="education-coursework">
+            <strong>Relevant Coursework:</strong> Data Structures & Algorithms, DBMS, Statistics for Data Science, Machine Learning, Data Warehousing & Mining, OS, Computer Networks, Software Engineering
+          </p>
+        </div>
+
+        <div class="education-card reveal reveal-delay-1">
+          <div class="education-icon">
+            <i class="fa-solid fa-school"></i>
+          </div>
+          <h3 class="education-degree">Higher Secondary — Science</h3>
+          <p class="education-school">Government Model High School</p>
+          <p class="education-year"><i class="fa-regular fa-calendar"></i> 2020 – 2022</p>
+          <p class="education-coursework">
+            <strong>Foundation in:</strong> Mathematics, Physics, Chemistry — building the analytical and logical problem-solving skills that underpin my data science career.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CERTIFICATIONS SECTION ==================== -->
+  <section class="certifications" id="certifications">
+    <div class="container">
+      <span class="section-label">Certifications</span>
+      <h2 class="section-title">Professional Credentials</h2>
+
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <div>
+            <p class="cert-name">Data Analytics Internship</p>
+            <p class="cert-issuer">Solitaire Infosys · 2026</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <div>
+            <p class="cert-name">Data Analytics Job Simulation</p>
+            <p class="cert-issuer">Deloitte Australia (Forage) · 2025</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <div>
+            <p class="cert-name">Certification of Achievement</p>
+            <p class="cert-issuer">Croma Campus · 2025</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <div>
+            <p class="cert-name">Certification of Completion</p>
+            <p class="cert-issuer">HopingMinds · 2023</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-icon"><i class="fa-brands fa-aws"></i></div>
+          <div>
+            <p class="cert-name">Foundations of Prompt Engineering</p>
+            <p class="cert-issuer">AWS Skillbuilders · 2026</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-icon"><i class="fa-brands fa-microsoft"></i></div>
+          <div>
+            <p class="cert-name">Microsoft Power BI</p>
+            <p class="cert-issuer">Self-Directed Learning · 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="contact" id="contact">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Contact Me</h2>
+
+      <!-- Contact Info Card -->
+      <div class="contact-info-card reveal" style="max-width: 500px; width: 100%;">
+        <p class="contact-info-title">Connect With Me</p>
+        <div class="social-links" style="justify-content: center;">
+          <a href="https://github.com/nikk2877124-source" target="_blank" class="social-link" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/nikhil-kumar-844b3430b" target="_blank" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+        <div class="contact-details">
+          <a href="mailto:nikk2877124@gmail.com" class="contact-detail">
+            <span class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></span>
+            nikk2877124@gmail.com
+          </a>
+          <a href="tel:+917973649379" class="contact-detail">
+            <span class="contact-detail-icon"><i class="fa-solid fa-phone"></i></span>
+            +91-7973649379
+          </a>
+          <span class="contact-detail">
+            <span class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+            Noida, Uttar Pradesh, India
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2026 Nikhil Kumar. All rights reserved.</p>
+      <p class="footer-credit">Made with <span class="heart">♥</span> by Nikhil</p>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="index.js"></script>
+</body>
+</html>
