@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateCounter(element, target) {
     let startTimestamp = null;
     const duration = 2000;
-    const suffix = element.getAttribute('data-suffix') || '+';
+    const suffix = element.hasAttribute('data-suffix') ? element.getAttribute('data-suffix') : '+';
 
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
@@ -214,13 +214,113 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- PARALLAX EFFECT ON HERO IMAGE ----
-  const heroVisual = document.querySelector('.hero-visual');
-  if (heroVisual && window.matchMedia('(pointer: fine)').matches) {
+  // ==============================
+  // 3D INTERFACE
+  // ==============================
+  const canTilt = window.matchMedia('(pointer: fine)').matches &&
+                  !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- HERO 3D: portrait rotates, layers drift at their own depth ----
+  const heroScene = document.getElementById('heroScene');
+  const heroLayers = Array.from(document.querySelectorAll('#heroStage [data-depth]'));
+  if (heroScene && canTilt) {
+    let targetX = 0, targetY = 0, currentX = 0, currentY = 0, animating = false;
+
+    const wake = () => {
+      if (!animating) {
+        animating = true;
+        requestAnimationFrame(tickHero);
+      }
+    };
+
     document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 20;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
-      heroVisual.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+      targetX = (e.clientX / window.innerWidth - 0.5) * 2;
+      targetY = (e.clientY / window.innerHeight - 0.5) * 2;
+      wake();
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      targetX = 0;
+      targetY = 0;
+      wake();
+    });
+
+    function tickHero() {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      heroScene.style.transform =
+        `rotateY(${(currentX * 10).toFixed(2)}deg) rotateX(${(-currentY * 7).toFixed(2)}deg)`;
+      heroLayers.forEach(layer => {
+        const depth = parseFloat(layer.dataset.depth) || 0;
+        layer.style.transform =
+          `translate3d(${(currentX * depth).toFixed(2)}px, ${(currentY * depth * 0.6).toFixed(2)}px, 0)`;
+      });
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        requestAnimationFrame(tickHero);
+      } else {
+        animating = false;
+      }
+    }
+  }
+
+  // ---- 3D TILT CARDS ----
+  const tiltSelector = [
+    '.project-card', '.exp-item', '.process-step', '.edu-item',
+    '.contact-list li', '.laptop', '.hero-stat'
+  ].join(', ');
+
+  if (canTilt) {
+    document.querySelectorAll(tiltSelector).forEach(card => {
+      card.classList.add('tilt');
+
+      const glare = document.createElement('div');
+      glare.className = 'tilt-glare';
+      card.appendChild(glare);
+
+      const isLarge = card.classList.contains('project-card') || card.classList.contains('exp-item') || card.classList.contains('laptop');
+      const maxTilt = isLarge ? 6 : 9;
+      const lift = isLarge ? 8 : 4;
+      let rect = null;
+      let raf = null;
+      let resetTimer = null;
+
+      const onEnter = () => {
+        clearTimeout(resetTimer);
+        rect = card.getBoundingClientRect();
+        card.classList.add('is-tilting');
+        card.style.transition = 'transform 0.12s ease-out';
+      };
+
+      const onMove = (e) => {
+        if (!rect) rect = card.getBoundingClientRect();
+        const px = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
+        const py = Math.min(Math.max((e.clientY - rect.top) / rect.height, 0), 1);
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = null;
+          const rx = ((0.5 - py) * maxTilt * 2).toFixed(2);
+          const ry = ((px - 0.5) * maxTilt * 2).toFixed(2);
+          card.style.transform =
+            `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-${lift}px) scale3d(1.015, 1.015, 1.015)`;
+          card.style.setProperty('--glare-x', `${(px * 100).toFixed(1)}%`);
+          card.style.setProperty('--glare-y', `${(py * 100).toFixed(1)}%`);
+        });
+      };
+
+      const onLeave = () => {
+        rect = null;
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+        card.classList.remove('is-tilting');
+        card.style.transition = 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+        card.style.transform = '';
+        resetTimer = setTimeout(() => {
+          if (!card.classList.contains('is-tilting')) card.style.transition = '';
+        }, 650);
+      };
+
+      card.addEventListener('mouseenter', onEnter);
+      card.addEventListener('mousemove', onMove, { passive: true });
+      card.addEventListener('mouseleave', onLeave);
     });
   }
 

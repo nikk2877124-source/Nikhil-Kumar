@@ -13,27 +13,31 @@
 <body>
 
   <!-- Background Effects -->
+  <canvas id="bg3d" class="bg-3d" aria-hidden="true"></canvas>
   <div class="bg-grid"></div>
   <div class="bg-glow bg-glow--1"></div>
   <div class="bg-glow bg-glow--2"></div>
   <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- ==================== HEADER =================
-   === -->
+  <!-- ==================== HEADER ==================== -->
   <header class="header" id="header">
-    <div class="container">
-      <a href="#" class="logo">
-        <span>Welcome to my portfolio</span>
+    <div class="container header-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-line brand-line--red">Data Scientist</span>
+        <span class="brand-line">ML Engineer</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
         <a href="#hero" class="active">Home</a>
-        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <a href="#contact" class="header-status">
+        Available for opportunities <span class="star">✦</span>
+      </a>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span>
@@ -43,600 +47,423 @@
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION ==================== -->
+  <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">AI-Powered Data Analyst | Business Intelligence & Machine Learning</div>
-        <h1 class="hero-title">
-          <span class="greeting">Hi, I'm</span>
-          <span class="name">Nikhil Kumar</span>
-        </h1>
-        <p class="hero-subtitle">I turn data into decisions.</p>
-        <p class="hero-description">
-          Results-driven Computer Science graduate with 6+ months of Data Science internship experience. I build end-to-end analytics pipelines, ML models, and interactive dashboards that drive business impact.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn-primary">
-            View My Work <i class="fa-solid fa-arrow-up-right-from-square icon-small"></i>
-          </a>
-          <a href="/assets/Nikhil_Kumar_CV.pdf?v=2026-08-13" download="Nikhil_Kumar_CV.pdf" class="btn-secondary">
-            Download CV <i class="fa-solid fa-download icon-small"></i>
-          </a>
+    <div class="hero-stage" id="heroStage">
+      <div class="hero-giant" data-depth="-22" aria-hidden="true">
+        <span>Portfolio</span>
+      </div>
+
+      <div class="container hero-grid">
+        <!-- Left: identity -->
+        <div class="hero-left" data-depth="6">
+          <span class="hero-hello">Hello, I'm</span>
+          <h1 class="hero-name">Nikhil<br>Kumar</h1>
+          <p class="hero-role">Data Scientist &amp;<br>ML Engineer</p>
+          <p class="hero-subtitle">I turn data into decisions.</p>
+          <p class="hero-description">
+            Computer Science graduate with 6+ months of Data Science internship experience. I build end-to-end analytics pipelines, machine learning models, and interactive dashboards that drive real business impact.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn--red">View My Work <i class="fa-solid fa-arrow-right-long"></i></a>
+            <a href="/assets/Nikhil_Kumar_CV.pdf?v=2026-08-13" download="Nikhil_Kumar_CV.pdf" class="btn btn--ghost">Download CV <i class="fa-solid fa-download"></i></a>
+          </div>
+          <p class="hero-available"><i class="fa-solid fa-globe"></i> Available worldwide · Based in Noida, India</p>
         </div>
-        <div class="hero-tech">
-          <span class="hero-tech-label">Technologies I Work With</span>
-          <div class="hero-tech-icons">
-            <div class="tech-icon" title="Python">
-              <i class="fa-brands fa-python tech-icon-python"></i>
+
+        <!-- Center: portrait in a 3D scene -->
+        <div class="hero-center">
+          <div class="hero-scene" id="heroScene">
+            <img src="assets/images/profile-cutout.png" alt="Nikhil Kumar - Data Scientist" class="hero-portrait" fetchpriority="high">
+            <div class="hero-float hero-float--1">
+              <span class="hero-float-icon"><i class="fa-solid fa-bullseye"></i></span>
+              <span><strong>88%</strong> ML Accuracy</span>
             </div>
-            <div class="tech-icon" title="SQL / MySQL">
-              <i class="fa-solid fa-database tech-icon-sql"></i>
-            </div>
-            <div class="tech-icon" title="Power BI">
-              <i class="fa-solid fa-chart-column tech-icon-powerbi"></i>
-            </div>
-            <div class="tech-icon" title="Pandas / NumPy">
-              <i class="fa-solid fa-table tech-icon-pandas"></i>
-            </div>
-            <div class="tech-icon" title="Scikit-learn">
-              <i class="fa-solid fa-brain tech-icon-sklearn"></i>
-            </div>
-            <div class="tech-icon" title="Streamlit">
-              <span class="streamlit-badge">St</span>
-            </div>
-            <div class="tech-icon" title="FastAPI">
-              <i class="fa-solid fa-bolt tech-icon-fastapi"></i>
-            </div>
-            <div class="tech-icon" title="Git">
-              <i class="fa-brands fa-git-alt tech-icon-git"></i>
+            <div class="hero-float hero-float--2">
+              <span class="hero-float-icon"><i class="fa-solid fa-database"></i></span>
+              <span><strong>50K+</strong> Rows Processed</span>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="hero-visual">
-        <div class="hero-image-wrapper">
-          <div class="hero-image-glow"></div>
-          <img src="assets/images/profile.jpg" alt="Nikhil Kumar - Data Scientist" class="hero-image">
+        <!-- Right: tagline + stats -->
+        <div class="hero-right" data-depth="10">
+          <div class="hero-tagline">
+            <span class="hero-tagline-star"><span class="star">✦</span></span>
+            <p>Turning raw data<br>into powerful<br>decisions.</p>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-num"><span class="stat-number" data-count="4" data-suffix="">0</span></span>
+              <span class="hero-stat-label">Internships<br>Completed</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num"><span class="stat-number" data-count="6" data-suffix="+">0</span></span>
+              <span class="hero-stat-label">Projects<br>Deployed</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num"><span class="stat-number" data-count="88" data-suffix="%">0</span></span>
+              <span class="hero-stat-label">ML Model<br>Accuracy</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num"><span class="stat-number" data-count="6" data-suffix="+">0</span></span>
+              <span class="hero-stat-label">Certifications<br>Earned</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== ABOUT SECTION ==================== -->
-  <section class="about" id="about">
+  <!-- ==================== PROJECTS ==================== -->
+  <section class="projects" id="projects">
     <div class="container">
-      <div class="about-content reveal">
-        <span class="section-label">About Me</span>
-        <h2 class="about-title">
-          I'm passionate about<br>turning data into <span>actionable insights</span>
-        </h2>
-        <p class="about-text">
-          With 6+ months of intensive Data Science internship experience, I specialize in data analysis, machine learning, business intelligence, and predictive analytics. I'm proficient in Python, SQL, Pandas, Power BI, and Scikit-learn — building end-to-end analytics pipelines, interactive dashboards, and ML models that translate complex datasets into data-driven decisions.
+      <div class="section-head reveal">
+        <h2 class="section-title">Selected Projects</h2>
+        <span class="section-rule"></span>
+        <a href="https://github.com/nikk2877124-source" target="_blank" rel="noopener" class="section-link">View all projects <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <a href="https://github.com/nikk2877124-source/influence-guard-ai-" target="_blank" rel="noopener" class="project-media">
+            <img src="assets/images/projects/influenceguard.png" alt="Influence Guard AI dashboard" loading="lazy">
+          </a>
+          <div class="project-meta">
+            <span class="project-index">01</span>
+            <div class="project-text">
+              <h3 class="project-title">Influence Guard AI</h3>
+              <p class="project-sub">ML fraud detection · Python, Scikit-learn</p>
+            </div>
+            <a href="https://github.com/nikk2877124-source/influence-guard-ai-" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Influence Guard AI"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <a href="https://github.com/nikk2877124-source/Blinkit-sales-analysis" target="_blank" rel="noopener" class="project-media">
+            <img src="assets/images/projects/blinkit.png" alt="Blinkit grocery sales dashboard" loading="lazy">
+          </a>
+          <div class="project-meta">
+            <span class="project-index">02</span>
+            <div class="project-text">
+              <h3 class="project-title">Blinkit Grocery Analysis</h3>
+              <p class="project-sub">Sales pipeline · Python, MySQL, Power BI</p>
+            </div>
+            <a href="https://github.com/nikk2877124-source/Blinkit-sales-analysis" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Blinkit Grocery Analysis"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <a href="https://github.com/nikk2877124-source" target="_blank" rel="noopener" class="project-media">
+            <img src="assets/images/projects/ecommerce-analysis.png" alt="E-commerce sales analysis dashboard" loading="lazy">
+          </a>
+          <div class="project-meta">
+            <span class="project-index">03</span>
+            <div class="project-text">
+              <h3 class="project-title">E-Commerce Sales Analysis</h3>
+              <p class="project-sub">RFM &amp; cohort analytics · SQL, Power BI</p>
+            </div>
+            <a href="https://github.com/nikk2877124-source" target="_blank" rel="noopener" class="project-arrow" aria-label="Open E-Commerce Sales Analysis"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="https://github.com/nikk2877124-source/fit-geneie" target="_blank" rel="noopener" class="project-media">
+            <img src="assets/images/projects/fitgenie.png" alt="Fit Genie AI fitness coach" loading="lazy">
+          </a>
+          <div class="project-meta">
+            <span class="project-index">04</span>
+            <div class="project-text">
+              <h3 class="project-title">Fit Genie</h3>
+              <p class="project-sub">AI fitness coach · FastAPI, Gemini API</p>
+            </div>
+            <a href="https://github.com/nikk2877124-source/fit-geneie" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Fit Genie"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <a href="https://github.com/nikk2877124-source/Insights-ai-" target="_blank" rel="noopener" class="project-media">
+            <img src="assets/images/projects/insightai.png" alt="Insight AI business intelligence assistant" loading="lazy">
+            <span class="project-badge">In progress</span>
+          </a>
+          <div class="project-meta">
+            <span class="project-index">05</span>
+            <div class="project-text">
+              <h3 class="project-title">Insight AI</h3>
+              <p class="project-sub">Natural-language BI · FastAPI, Ollama, MySQL</p>
+            </div>
+            <a href="https://github.com/nikk2877124-source/Insights-ai-" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Insight AI"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <a href="https://github.com/nikk2877124-source/employee-analytics-sql-project" target="_blank" rel="noopener" class="project-media">
+            <img src="assets/images/projects/employee_analytics.png" alt="Employee analytics SQL project" loading="lazy">
+          </a>
+          <div class="project-meta">
+            <span class="project-index">06</span>
+            <div class="project-text">
+              <h3 class="project-title">Employee Analytics SQL</h3>
+              <p class="project-sub">Business queries · MySQL, joins &amp; aggregation</p>
+            </div>
+            <a href="https://github.com/nikk2877124-source/employee-analytics-sql-project" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Employee Analytics SQL"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Experience</h2>
+        <span class="section-rule"></span>
+        <span class="section-note">4 internships · 2023 – 2026</span>
+      </div>
+
+      <div class="exp-list">
+        <article class="exp-item reveal">
+          <span class="exp-index">01</span>
+          <div class="exp-main">
+            <h3 class="exp-role">Data Science Project Intern</h3>
+            <p class="exp-company">Solitaire Infosys <span>· Mohali, Punjab</span></p>
+            <ul class="exp-points">
+              <li>Designed Influence Guard AI, an end-to-end ML solution processing 50,000+ rows of social media data to detect fraudulent influencer activity.</li>
+              <li>Executed preprocessing and feature engineering with Python, Pandas and NumPy, improving dataset quality by 35%.</li>
+              <li>Implemented Isolation Forest anomaly detection reaching 88% accuracy and 85% precision.</li>
+              <li>Built 3 interactive Power BI dashboards, cutting manual reporting time by 40%.</li>
+            </ul>
+          </div>
+          <span class="exp-date">Jan 2026 – Jun 2026</span>
+        </article>
+
+        <article class="exp-item reveal">
+          <span class="exp-index">02</span>
+          <div class="exp-main">
+            <h3 class="exp-role">Python Data Science Intern</h3>
+            <p class="exp-company">Croma Campus <span>· Noida, Uttar Pradesh</span></p>
+            <ul class="exp-points">
+              <li>Cleaned, analysed and visualised 10+ real-world datasets using Python, Pandas, Matplotlib and Seaborn.</li>
+              <li>Ran exploratory analysis and statistical hypothesis testing to surface hidden patterns.</li>
+              <li>Developed analytical storytelling skills, turning raw data into clear visual narratives.</li>
+            </ul>
+          </div>
+          <span class="exp-date">Jun 2025 – Aug 2025</span>
+        </article>
+
+        <article class="exp-item reveal">
+          <span class="exp-index">03</span>
+          <div class="exp-main">
+            <h3 class="exp-role">Data Analytics Virtual Intern</h3>
+            <p class="exp-company">Deloitte Australia <span>· via Forage</span></p>
+            <ul class="exp-points">
+              <li>Completed Deloitte's Data Analytics Job Simulation built around consulting-style case studies.</li>
+              <li>Performed cleaning, transformation and statistical analysis on complex business datasets.</li>
+              <li>Created executive-level visualisations and dashboards for stakeholder audiences.</li>
+            </ul>
+          </div>
+          <span class="exp-date">Apr 2025 – May 2025</span>
+        </article>
+
+        <article class="exp-item reveal">
+          <span class="exp-index">04</span>
+          <div class="exp-main">
+            <h3 class="exp-role">Python Intern</h3>
+            <p class="exp-company">HopingMinds <span>· Mohali, Punjab</span></p>
+            <ul class="exp-points">
+              <li>Developed an AI-powered conversational chatbot with an LLM API and Python, handling 500+ simulated user interactions.</li>
+              <li>Gained hands-on exposure to Generative AI, API integration and conversational AI development.</li>
+              <li>Designed prompt engineering strategies to optimise response accuracy.</li>
+            </ul>
+          </div>
+          <span class="exp-date">Jun 2023 – Jul 2023</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION / PROCESS / QUOTE ==================== -->
+  <section class="band" id="skills">
+    <div class="container band-grid">
+      <!-- Education & Skills -->
+      <div class="band-col band-col--edu reveal">
+        <h2 class="band-title">Education &amp; Skills</h2>
+
+        <span class="band-label">Education</span>
+        <div class="edu-item">
+          <div>
+            <strong>B.Tech — Computer Science</strong>
+            <span>Sardar Beant Singh State University, Gurdaspur</span>
+          </div>
+          <span class="edu-year">2022 – 2026</span>
+        </div>
+        <div class="edu-item">
+          <div>
+            <strong>Higher Secondary — Science</strong>
+            <span>Government Model High School</span>
+          </div>
+          <span class="edu-year">2020 – 2022</span>
+        </div>
+
+        <span class="band-label">Certifications</span>
+        <div class="edu-item edu-item--compact">
+          <div><strong>Data Analytics Job Simulation</strong><span>Deloitte Australia · Forage</span></div>
+          <span class="edu-year">2025</span>
+        </div>
+        <div class="edu-item edu-item--compact">
+          <div><strong>Foundations of Prompt Engineering</strong><span>AWS Skill Builder</span></div>
+          <span class="edu-year">2026</span>
+        </div>
+        <div class="edu-item edu-item--compact">
+          <div><strong>Data Analytics Internship</strong><span>Solitaire Infosys</span></div>
+          <span class="edu-year">2026</span>
+        </div>
+        <div class="edu-item edu-item--compact">
+          <div><strong>Microsoft Power BI</strong><span>Self-directed learning</span></div>
+          <span class="edu-year">2026</span>
+        </div>
+        <div class="edu-item edu-item--compact">
+          <div><strong>Certification of Achievement</strong><span>Croma Campus</span></div>
+          <span class="edu-year">2025</span>
+        </div>
+        <div class="edu-item edu-item--compact">
+          <div><strong>Certification of Completion</strong><span>HopingMinds</span></div>
+          <span class="edu-year">2023</span>
+        </div>
+
+        <span class="band-label">Skills</span>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">SQL / MySQL</span>
+          <span class="chip">Pandas / NumPy</span>
+          <span class="chip">Scikit-learn</span>
+          <span class="chip">Power BI / DAX</span>
+          <span class="chip">Matplotlib / Seaborn</span>
+          <span class="chip">Statistics</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Streamlit</span>
+          <span class="chip">Gen AI / LLM APIs</span>
+          <span class="chip">Git / GitHub</span>
+        </div>
+      </div>
+
+      <!-- Work Process -->
+      <div class="band-col band-col--process">
+        <h2 class="band-title reveal">Work Process</h2>
+        <ol class="process">
+          <li class="process-step reveal">
+            <span class="process-index">01</span>
+            <span class="process-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <div class="process-text">
+              <span class="process-name">Discover</span>
+              <p>Understanding the business question, stakeholders and the metrics that define success.</p>
+            </div>
+          </li>
+          <li class="process-step reveal reveal-delay-1">
+            <span class="process-index">02</span>
+            <span class="process-icon"><i class="fa-solid fa-filter"></i></span>
+            <div class="process-text">
+              <span class="process-name">Prepare</span>
+              <p>Cleaning, transforming and engineering features from raw, messy data.</p>
+            </div>
+          </li>
+          <li class="process-step reveal reveal-delay-2">
+            <span class="process-index">03</span>
+            <span class="process-icon"><i class="fa-solid fa-brain"></i></span>
+            <div class="process-text">
+              <span class="process-name">Model</span>
+              <p>Building, tuning and validating machine learning models against solid baselines.</p>
+            </div>
+          </li>
+          <li class="process-step reveal reveal-delay-3">
+            <span class="process-index">04</span>
+            <span class="process-icon"><i class="fa-solid fa-chart-column"></i></span>
+            <div class="process-text">
+              <span class="process-name">Visualize</span>
+              <p>Turning results into dashboards and visual stories decision-makers can act on.</p>
+            </div>
+          </li>
+          <li class="process-step reveal reveal-delay-4">
+            <span class="process-index">05</span>
+            <span class="process-icon"><i class="fa-solid fa-paper-plane"></i></span>
+            <div class="process-text">
+              <span class="process-name">Deliver</span>
+              <p>Deploying pipelines, documenting the work and handing over insights with impact.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Quote -->
+      <aside class="band-col band-col--quote reveal">
+        <span class="quote-mark">“</span>
+        <p class="quote-text">Data is only valuable when it drives a decision.</p>
+        <span class="quote-sign">Nikhil</span>
+        <p class="quote-cta">Let's create something great together.</p>
+        <span class="quote-star star">✦</span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-intro reveal">
+        <h2 class="contact-title">Let's Work<br>Together <span class="star">✦</span></h2>
+        <p class="contact-text">
+          I'm currently open to data science and analytics roles, internships and collaborations. Let's build something that turns data into results.
         </p>
-        <a href="#experience" class="btn-outline">
-          View My Experience <i class="fa-solid fa-briefcase icon-small"></i>
+        <a href="mailto:nikk2877124@gmail.com" class="pill">
+          <span class="pill-icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+          Available for opportunities
         </a>
       </div>
 
-      <div class="about-stats">
-        <div class="stat-card reveal reveal-delay-1">
-          <div class="stat-icon stat-icon--purple">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <div>
-            <div class="stat-number" data-count="4">0</div>
-            <div class="stat-label">Internships Completed</div>
-          </div>
-        </div>
-        <div class="stat-card reveal reveal-delay-2">
-          <div class="stat-icon stat-icon--cyan">
-            <i class="fa-solid fa-diagram-project"></i>
-          </div>
-          <div>
-            <div class="stat-number" data-count="5" data-suffix="+">0</div>
-            <div class="stat-label">Projects Deployed</div>
-          </div>
-        </div>
-        <div class="stat-card reveal reveal-delay-3">
-          <div class="stat-icon stat-icon--green">
-            <i class="fa-solid fa-bullseye"></i>
-          </div>
-          <div>
-            <div class="stat-number" data-count="88" data-suffix="%">0</div>
-            <div class="stat-label">ML Model Accuracy</div>
-          </div>
-        </div>
-        <div class="stat-card reveal reveal-delay-4">
-          <div class="stat-icon stat-icon--pink">
-            <i class="fa-solid fa-certificate"></i>
-          </div>
-          <div>
-            <div class="stat-number" data-count="6" data-suffix="+">0</div>
-            <div class="stat-label">Certifications Earned</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== EXPERIENCE SECTION ==================== -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <span class="section-label">My Experience</span>
-      <h2 class="section-title">Professional Journey</h2>
-
-      <div class="experience-timeline">
-        <!-- Experience 1 -->
-        <div class="experience-item reveal">
-          <div class="experience-dot"></div>
-          <div class="experience-card">
-            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Jan 2026 – Jun 2026</span>
-            <h3 class="experience-role">Data Science Project Intern</h3>
-            <p class="experience-company">Solitaire Infosys</p>
-            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Sahibzada Ajit Singh Nagar, Punjab</p>
-            <ul class="experience-points">
-              <li>Designed Influence Guard AI — an end-to-end ML solution processing 50,000+ rows of social media data to detect fraudulent influencer activity.</li>
-              <li>Executed data preprocessing, cleaning, and feature engineering using Python, Pandas & NumPy, improving dataset quality by 35%.</li>
-              <li>Implemented Isolation Forest anomaly detection achieving 88% accuracy and 85% precision in fraud detection.</li>
-              <li>Built 3 interactive Power BI dashboards, reducing manual reporting time by 40%.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Experience 2 -->
-        <div class="experience-item reveal reveal-delay-1">
-          <div class="experience-dot"></div>
-          <div class="experience-card">
-            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Jun 2025 – Aug 2025</span>
-            <h3 class="experience-role">Python Data Science Intern</h3>
-            <p class="experience-company">Croma Campus</p>
-            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Noida, Uttar Pradesh</p>
-            <ul class="experience-points">
-              <li>Performed data cleaning, analysis, and visualization on 10+ real-world datasets using Python, Pandas, Matplotlib & Seaborn.</li>
-              <li>Conducted exploratory data analysis and statistical hypothesis testing to uncover hidden patterns.</li>
-              <li>Developed skills in analytical storytelling and translating raw data into compelling visual narratives.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Experience 3 -->
-        <div class="experience-item reveal reveal-delay-2">
-          <div class="experience-dot"></div>
-          <div class="experience-card">
-            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Apr 2025 – May 2025</span>
-            <h3 class="experience-role">Data Analytics Virtual Intern</h3>
-            <p class="experience-company">Deloitte Australia (via Forage)</p>
-            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Virtual Program</p>
-            <ul class="experience-points">
-              <li>Completed Deloitte's Data Analytics Job Simulation with consulting-style analytics case studies.</li>
-              <li>Performed data cleaning, transformation, and statistical analysis on complex business datasets.</li>
-              <li>Created executive-level data visualizations and interactive dashboards for stakeholder audiences.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Experience 4 -->
-        <div class="experience-item reveal reveal-delay-3">
-          <div class="experience-dot"></div>
-          <div class="experience-card">
-            <span class="experience-date"><i class="fa-regular fa-calendar"></i> Jun 2023 – Jul 2023</span>
-            <h3 class="experience-role">Python Intern</h3>
-            <p class="experience-company">HopingMinds</p>
-            <p class="experience-location"><i class="fa-solid fa-location-dot"></i> Sahibzada Ajit Singh Nagar, Punjab</p>
-            <ul class="experience-points">
-              <li>Developed an AI-powered conversational chatbot using LLM API and Python, handling 500+ simulated user interactions.</li>
-              <li>Gained hands-on exposure to Generative AI, API integration, and conversational AI development.</li>
-              <li>Collaborated on designing prompt engineering strategies to optimize response accuracy.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== SKILLS SECTION ==================== -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <span class="section-label">My Skills</span>
-      <h2 class="section-title">Technologies I Master</h2>
-
-      <div class="skills-grid">
-        <div class="skill-item reveal">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--html">
-                <i class="fa-brands fa-python"></i>
-              </div>
-              <span class="skill-name">Python</span>
-            </div>
-            <span class="skill-percent">95%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="95"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal reveal-delay-1">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--react">
-                <i class="fa-solid fa-table"></i>
-              </div>
-              <span class="skill-name">Pandas / NumPy</span>
-            </div>
-            <span class="skill-percent">92%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="92"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal reveal-delay-2">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--node">
-                <i class="fa-solid fa-brain"></i>
-              </div>
-              <span class="skill-name">Scikit-learn / ML</span>
-            </div>
-            <span class="skill-percent">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="85"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--css">
-                <i class="fa-solid fa-database"></i>
-              </div>
-              <span class="skill-name">SQL / MySQL</span>
-            </div>
-            <span class="skill-percent">90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="90"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal reveal-delay-1">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--tailwind">
-                <i class="fa-solid fa-chart-column"></i>
-              </div>
-              <span class="skill-name">Power BI / DAX</span>
-            </div>
-            <span class="skill-percent">88%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="88"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal reveal-delay-2">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--js">
-                <i class="fa-solid fa-chart-area"></i>
-              </div>
-              <span class="skill-name">Matplotlib / Seaborn</span>
-            </div>
-            <span class="skill-percent">88%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="88"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--ts">
-                <i class="fa-solid fa-bolt"></i>
-              </div>
-              <span class="skill-name">FastAPI</span>
-            </div>
-            <span class="skill-percent">82%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="82"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal reveal-delay-1">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--next">
-                <span class="icon-tiny">St</span>
-              </div>
-              <span class="skill-name">Streamlit</span>
-            </div>
-            <span class="skill-percent">80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="80"></div>
-          </div>
-        </div>
-
-        <div class="skill-item reveal reveal-delay-2">
-          <div class="skill-header">
-            <div class="skill-info">
-              <div class="skill-logo skill-logo--git">
-                <i class="fa-brands fa-git-alt"></i>
-              </div>
-              <span class="skill-name">Git / GitHub</span>
-            </div>
-            <span class="skill-percent">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="85"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== PROJECTS SECTION ==================== -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <span class="section-label">Featured Projects</span>
-      <h2 class="section-title">Some of My Recent Work</h2>
-
-      <div class="projects-grid-5">
-        <!-- Project 1 -->
-        <div class="project-card reveal">
-          <div class="project-image">
-            <img src="assets/images/projects/influenceguard.png" alt="Influence Guard AI" loading="lazy">
-            <span class="project-number">01</span>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Scikit-learn</span>
-              <span class="project-tag">Streamlit</span>
-              <span class="project-tag">ML</span>
-            </div>
-            <h3 class="project-title">Influence Guard AI</h3>
-            <p class="project-desc">ML-powered fraud detection for influencer accounts — 88% accuracy, 85% precision using Isolation Forest on 5,000+ profiles.</p>
-            <a href="https://github.com/nikk2877124-source/influence-guard-ai-" target="_blank" rel="noopener" class="project-link">
-              View Project <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card reveal reveal-delay-1">
-          <div class="project-image">
-            <img src="assets/images/projects/blinkit.png" alt="Blinkit Grocery Data Analysis" loading="lazy">
-            <span class="project-number">02</span>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">Power BI</span>
-            </div>
-            <h3 class="project-title">Blinkit Grocery Analysis</h3>
-            <p class="project-desc">End-to-end grocery sales pipeline with 15+ KPIs, drill-down Power BI dashboard on 20,000+ transaction records.</p>
-            <a href="https://github.com/nikk2877124-source/Blinkit-sales-analysis" target="_blank" rel="noopener" class="project-link">
-              View Project <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card reveal reveal-delay-2">
-          <div class="project-image">
-            <img src="assets/images/projects/ecommerce-analysis.png" alt="E-commerce Sales Analysis" loading="lazy">
-            <span class="project-number">03</span>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">SQL</span>
-              <span class="project-tag">Power BI</span>
-            </div>
-            <h3 class="project-title">E-Commerce Sales Analysis</h3>
-            <p class="project-desc">Analyzed 30,000+ orders with RFM segmentation, cohort analysis, and revenue forecasting dashboards.</p>
-            <a href="https://github.com/nikk2877124-source" target="_blank" rel="noopener" class="project-link">
-              View Project <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card reveal">
-          <div class="project-image">
-            <img src="assets/images/projects/fitgenie.png" alt="Fit Genie" loading="lazy">
-            <span class="project-number">04</span>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">FastAPI</span>
-              <span class="project-tag">Gemini API</span>
-              <span class="project-tag">Gen AI</span>
-            </div>
-            <h3 class="project-title">Fit Genie</h3>
-            <p class="project-desc">AI-powered fitness coach using FastAPI & Gemini API — personalized workout plans, nutrition guidance, and AI chat.</p>
-            <a href="https://github.com/nikk2877124-source/fit-geneie" target="_blank" rel="noopener" class="project-link">
-              View Project <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card reveal reveal-delay-1">
-          <div class="project-image">
-            <img src="assets/images/projects/insightai.png" alt="Insight AI" loading="lazy">
-            <span class="project-number">05</span>
-            <span class="project-badge-wip">🚧 In Progress</span>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">FastAPI</span>
-              <span class="project-tag">Ollama</span>
-              <span class="project-tag">Streamlit</span>
-              <span class="project-tag">MySQL</span>
-            </div>
-            <h3 class="project-title">Insight AI</h3>
-            <p class="project-desc">AI-powered BI assistant — natural language queries, automated SQL generation, dynamic visualizations & report generation.</p>
-            <a href="https://github.com/nikk2877124-source/Insights-ai-" target="_blank" rel="noopener" class="project-link">
-              View Project <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card reveal reveal-delay-2">
-          <div class="project-image">
-            <img src="assets/images/projects/employee_analytics.png" alt="Employee Analytics SQL Project" loading="lazy">
-            <span class="project-number">06</span>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">SQL</span>
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">Data Analysis</span>
-            </div>
-            <h3 class="project-title">Employee Analytics SQL</h3>
-            <p class="project-desc">A realistic SQL practice dataset for Data and AI Analysts. Features real-world business queries using complex JOINS, GROUP BY, and HAVING.</p>
-            <a href="https://github.com/nikk2877124-source/employee-analytics-sql-project" target="_blank" rel="noopener" class="project-link">
-              View Project <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== EDUCATION SECTION ==================== -->
-  <section class="education" id="education">
-    <div class="container">
-      <span class="section-label">Education</span>
-      <h2 class="section-title">Academic Background</h2>
-
-      <div class="education-grid">
-        <div class="education-card reveal">
-          <div class="education-icon">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <h3 class="education-degree">B.Tech — Computer Science</h3>
-          <p class="education-school">Sardar Beant Singh State University (SBSSU)</p>
-          <p class="education-year"><i class="fa-regular fa-calendar"></i> 2022 – 2026 · Gurdaspur, Punjab</p>
-          <p class="education-coursework">
-            <strong>Relevant Coursework:</strong> Data Structures & Algorithms, DBMS, Statistics for Data Science, Machine Learning, Data Warehousing & Mining, OS, Computer Networks, Software Engineering
-          </p>
-        </div>
-
-        <div class="education-card reveal reveal-delay-1">
-          <div class="education-icon">
-            <i class="fa-solid fa-school"></i>
-          </div>
-          <h3 class="education-degree">Higher Secondary — Science</h3>
-          <p class="education-school">Government Model High School</p>
-          <p class="education-year"><i class="fa-regular fa-calendar"></i> 2020 – 2022</p>
-          <p class="education-coursework">
-            <strong>Foundation in:</strong> Mathematics, Physics, Chemistry — building the analytical and logical problem-solving skills that underpin my data science career.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== CERTIFICATIONS SECTION ==================== -->
-  <section class="certifications" id="certifications">
-    <div class="container">
-      <span class="section-label">Certifications</span>
-      <h2 class="section-title">Professional Credentials</h2>
-
-      <div class="cert-grid">
-        <div class="cert-card reveal">
-          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
-          <div>
-            <p class="cert-name">Data Analytics Internship</p>
-            <p class="cert-issuer">Solitaire Infosys · 2026</p>
-          </div>
-        </div>
-
-        <div class="cert-card reveal reveal-delay-1">
-          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
-          <div>
-            <p class="cert-name">Data Analytics Job Simulation</p>
-            <p class="cert-issuer">Deloitte Australia (Forage) · 2025</p>
-          </div>
-        </div>
-
-        <div class="cert-card reveal reveal-delay-2">
-          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
-          <div>
-            <p class="cert-name">Certification of Achievement</p>
-            <p class="cert-issuer">Croma Campus · 2025</p>
-          </div>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
-          <div>
-            <p class="cert-name">Certification of Completion</p>
-            <p class="cert-issuer">HopingMinds · 2023</p>
-          </div>
-        </div>
-
-        <div class="cert-card reveal reveal-delay-1">
-          <div class="cert-icon"><i class="fa-brands fa-aws"></i></div>
-          <div>
-            <p class="cert-name">Foundations of Prompt Engineering</p>
-            <p class="cert-issuer">AWS Skillbuilders · 2026</p>
-          </div>
-        </div>
-
-        <div class="cert-card reveal reveal-delay-2">
-          <div class="cert-icon"><i class="fa-brands fa-microsoft"></i></div>
-          <div>
-            <p class="cert-name">Microsoft Power BI</p>
-            <p class="cert-issuer">Self-Directed Learning · 2026</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== CONTACT SECTION ==================== -->
-  <section class="contact" id="contact">
-    <div class="container contact-section-centered">
-      <span class="section-label">Get In Touch</span>
-      <h2 class="section-title">Contact Me</h2>
-
-      <!-- Contact Info Card -->
-      <div class="contact-info-card reveal contact-card-max-width">
-        <p class="contact-info-title">Connect With Me</p>
-        <div class="social-links social-links-center">
-          <a href="https://github.com/nikk2877124-source" target="_blank" rel="noopener" class="social-link" aria-label="GitHub" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/nikhil-kumar-844b3430b" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn" title="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </div>
-        <div class="contact-details">
-          <a href="mailto:nikk2877124@gmail.com" class="contact-detail">
-            <span class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></span>
+      <ul class="contact-list reveal reveal-delay-1">
+        <li>
+          <a href="mailto:nikk2877124@gmail.com">
+            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
             nikk2877124@gmail.com
           </a>
-          <a href="tel:+917973649379" class="contact-detail">
-            <span class="contact-detail-icon"><i class="fa-solid fa-phone"></i></span>
-            +91-7973649379
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/nikhil-kumar-844b3430b" target="_blank" rel="noopener">
+            <span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+            linkedin.com/in/nikhil-kumar-844b3430b
           </a>
-          <span class="contact-detail">
-            <span class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+        </li>
+        <li>
+          <a href="https://github.com/nikk2877124-source" target="_blank" rel="noopener">
+            <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+            github.com/nikk2877124-source
+          </a>
+        </li>
+        <li>
+          <a href="tel:+917973649379">
+            <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+            +91 79736 49379
+          </a>
+        </li>
+        <li>
+          <span class="contact-static">
+            <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
             Noida, Uttar Pradesh, India
           </span>
+        </li>
+      </ul>
+
+      <div class="contact-visual reveal reveal-delay-2">
+        <div class="laptop" id="laptop">
+          <div class="laptop-inner">
+            <div class="laptop-screen">
+              <img src="assets/images/projects/blinkit.png" alt="Dashboard preview on a laptop" loading="lazy">
+              <div class="laptop-overlay">
+                <span>We turn<br>data into<br>decisions</span>
+              </div>
+            </div>
+            <div class="laptop-base"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -644,9 +471,9 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
-    <div class="container">
+    <div class="container footer-inner">
       <p class="footer-text">&copy; 2026 Nikhil Kumar. All rights reserved.</p>
-      <p class="footer-credit">Made with <span class="heart">♥</span> by Nikhil</p>
+      <p class="footer-credit">Data Scientist &amp; ML Engineer <span class="star">✦</span> Noida, India</p>
     </div>
   </footer>
 
@@ -655,6 +482,8 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="scene3d.js"></script>
   <script src="index.js"></script>
 </body>
 </html>
